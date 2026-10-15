@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Production-Oriented Machine Learning Pipeline for Real Estate Mass Appraisal with Official Geospatial Feature Engineering</title>
+<meta name="description" content="ENIAC 2026 paper: a mass appraisal pipeline that trains only on features available in the municipal IPTU cadastre, built with the Goiânia city government.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2f63;
+    --blue: #0067ac;
+    --pale: #eef4fb;
+    --ink: #1f2328;
+    --muted: #5b6470;
+    --rule: #d5e2f0;
+    --paper: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #a9c8f0;
+      --blue: #6fb1e8;
+      --pale: #16202c;
+      --ink: #e6e9ee;
+      --muted: #a2abb7;
+      --rule: #2a3a4d;
+      --paper: #0d1117;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 "Fira Sans", system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 56px; }
+  .venue { color: var(--blue); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+  h1 { color: var(--navy); font-size: clamp(26px, 5vw, 36px); line-height: 1.2; margin: 8px 0 16px; }
+  .authors { margin: 0; }
+  .affil { color: var(--muted); font-size: 15px; margin: 4px 0 24px; }
+  .affil span { display: block; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .button {
+    display: inline-block; padding: 10px 18px; border-radius: 6px;
+    font-weight: 600; text-decoration: none; border: 2px solid var(--blue);
+  }
+  .button.primary { background: var(--blue); color: #fff; }
+  .button.secondary { color: var(--blue); }
+  h2 { color: var(--navy); font-size: 20px; margin: 32px 0 8px; }
+  .abstract { background: var(--pale); border-radius: 6px; padding: 16px 20px; }
+  pre {
+    background: var(--pale); border-radius: 6px; padding: 16px; overflow-x: auto;
+    font-size: 13px; line-height: 1.5;
+  }
+  a { color: var(--blue); }
+  footer { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 16px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="venue">ENIAC 2026, co-located with BRACIS 2026</div>
+  <h1>A Production-Oriented Machine Learning Pipeline for Real Estate Mass Appraisal with Official Geospatial Feature Engineering</h1>
+  <p class="authors"><strong>Gustavo L. B. Pereira</strong>, Luís H. A. Rosa, Vinicius Braga, Vinicius Castro, Sofia Costa, Breno M. Barros, Sávio S. T. de Oliveira, Luiz M. L. Pascoal</p>
+  <p class="affil">
+    <span>Institute of Informatics, Federal University of Goiás (UFG)</span>
+    <span>Center of Excellence in Artificial Intelligence (CEIA)</span>
+  </p>
+
+  <div class="actions">
+    <a class="button primary" href="pereira2026-eniac-accepted-manuscript.pdf">PDF (accepted manuscript)</a>
+    <a class="button secondary" href="https://github.com/Gustavoaluiz/prompt-neighborhood-grouper">LLM prompt and neighborhood mapping</a>
+  </div>
+
+  <h2>Abstract</h2>
+  <div class="abstract">
+    <p>Real estate mass appraisal underpins fair property taxation in Brazilian municipalities, but attributes that curated-dataset models rely on are unavailable in official cadastral systems at inference time. We present a production-oriented pipeline that restricts features to attributes derivable from the municipal IPTU cadastre, standardizes territory through a spatial join with official shapefiles, and uses a large language model offline to encode neighborhoods into ten locational tiers, persisted as a versioned artifact never invoked at serving time. Among three tree-based ensembles evaluated on about 35,000 deduplicated listings under stratified 5-fold cross-validation with a 90/10 split, CatBoost reaches a holdout mean absolute error near BRL 222,000 to 225,000, R<sup>2</sup> around 0.89, and a median absolute percentage error close to 11%; coordinates with the language-model group match the full baseline using fewer features.</p>
+  </div>
+
+  <h2>Cite</h2>
+<pre>@inproceedings{pereira2026production,
+  title     = {A Production-Oriented Machine Learning Pipeline for Real Estate Mass
+               Appraisal with Official Geospatial Feature Engineering},
+  author    = {Pereira, Gustavo L. B. and Rosa, Lu{\'i}s H. A. and Braga, Vinicius
+               and Castro, Vinicius and Costa, Sofia and Barros, Breno M.
+               and de Oliveira, S{\'a}vio S. T. and Pascoal, Luiz M. L.},
+  booktitle = {Anais do Encontro Nacional de Intelig{\^e}ncia Artificial e Computacional (ENIAC)},
+  address   = {Cuiab{\'a}, MT, Brazil},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o (SBC)},
+  year      = {2026}
+}</pre>
+
+  <footer>
+    Supported by the Center of Excellence in Artificial Intelligence (CEIA), the Prefeitura de Goiânia, and INCT TILD-IAR grant 408490/2024-1.<br>
+    Contact: <a href="mailto:gustavobueno@discente.ufg.br">gustavobueno@discente.ufg.br</a>
+  </footer>
+</main>
+</body>
+</html>
